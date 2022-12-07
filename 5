@@ -1,0 +1,179 @@
+--global commands
+_G.party = false
+
+--commands
+--gonna list on /console
+warn("------Commands-------")
+print(":be frontman or :be guard")
+print("-glass | which you gonna teleport to glass bridge")
+print("-byelegs or -byearms | which your legs or arm gonna get eat by you")
+print("-party and -unparty | all lights turn on and off")
+warn("advanced command")
+print("$sudo - calling") 
+print("-p | pastebin")
+print("-g | github")
+print("-s | string")
+warn("name of script") 
+print("remove-chat")
+print("walk-on-walls") 
+warn("end")
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == ":be frontman" then
+        game:GetService("ReplicatedStorage").FrontmanRemotes.BecomeFrontman:InvokeServer(true)
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+
+--line 2
+
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == ":be guard" then
+        game:GetService("ReplicatedStorage").GuardRemotes.BecomeGuard:InvokeServer(true)
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+
+--line 3
+
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == "-glass" then    Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-500.74426269531, 78.206008911133, -336.58493041992)
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+
+--line 4
+
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == "-Byearms" then    game:GetService'Players'.LocalPlayer.Character['Left Arm']:Destroy()
+game:GetService'Players'.LocalPlayer.Character['Right Arm']:Destroy()
+
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == "-byearms" then    game:GetService'Players'.LocalPlayer.Character['Left Arm']:Destroy()
+game:GetService'Players'.LocalPlayer.Character['Right Arm']:Destroy()
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == "-byelegs" then    
+game:GetService'Players'.LocalPlayer.Character['Left Leg']:Destroy()
+game:GetService'Players'.LocalPlayer.Character['Right Leg']:Destroy()
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == "-Byelegs" then    game:GetService'Players'.LocalPlayer.Character['Left Leg']:Destroy()
+game:GetService'Players'.LocalPlayer.Character['Right Leg']:Destroy()
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+
+--line 5
+
+
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == "-party" then
+    while _G.party == true do   game:GetService("ReplicatedStorage").FrontmanRemotes.ToggleBridgeLights:FireServer(true)
+wait(1)
+game:GetService("ReplicatedStorage").FrontmanRemotes.ToggleBridgeLights:FireServer(false)
+wait(1)
+    end
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+--cut
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == "-unparty" then    
+    _G.party = false
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+
+--cut
+
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == "-party" then
+    _G.party = true
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+
+--gui version
+
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == "$sudo -g -s" then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MostafaXc00dy/MostafaXc00dy/main/Red%20Light%20Green%20Light/RV2.lua"))()
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+
+-- line 0
+
+
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == "$sudo calm" then
+    game.Players.LocalPlayer:Kick("error: $calm$ | what caused of kick?: $error$ OR $error$") 
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+
+
+
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == "$sudo walk-on-walls" then
+    loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
+
+
+local Players = game:GetService("Players")
+
+local function chatted(msg)
+    if msg == "$sudo remove-chat" then
+    
+-- FE chat made by MrBeast#5353
+-- The effect isn't immediate, it they may take a few minutes.
+-- This is a beta version, it only works in games that use the default roblox chat
+while true do
+    wait(1.7)
+local args = {
+    [1] = " ",
+    [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+end
+    end
+end
+Players.LocalPlayer.Chatted:Connect(chatted)
